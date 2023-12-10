@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/15_Multithreading.iml" filepath="$PROJECT_DIR$/.idea/15_Multithreading.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Deadlock/Deadlock.iml" filepath="$PROJECT_DIR$/Deadlock/Deadlock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ImageResizer/ImageResizer.iml" filepath="$PROJECT_DIR$/ImageResizer/ImageResizer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Transactions/Transactions.iml" filepath="$PROJECT_DIR$/Transactions/Transactions.iml" />
+    </modules>
+  </component>
+</project>

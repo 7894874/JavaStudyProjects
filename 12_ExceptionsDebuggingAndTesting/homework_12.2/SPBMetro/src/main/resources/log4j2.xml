@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="error" monitorInterval="5"> <!-- status:error mean ONLY show log4j kernel's error log in console-->
+    <Properties>
+        <Property name="APP_LOG_ROOT">logs</Property>
+    </Properties>
+    <Appenders>
+        <RollingFile name="fileLoggerSearch" fileName="${APP_LOG_ROOT}/search.log" filePattern="${APP_LOG_ROOT}/search-%d{yyyy-MM-dd}.log">
+            <!-- Except Error -->
+            <ThresholdFilter level="error" onMatch="DENY" onMismatch="ACCEPT"/>
+            <PatternLayout>
+                <pattern>%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %level %logger{36} - %msg%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+            </Policies>
+        </RollingFile>
+            <!-- Input_Errors-->
+        <RollingFile name="input_errors" fileName="${APP_LOG_ROOT}/input_errors.log" filePattern="${APP_LOG_ROOT}/input_errors-%d{yyyy-MM-dd}.log">
+            <PatternLayout>
+                <pattern>%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %level %logger{36} - %msg%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+            </Policies>
+        </RollingFile>
+           <!-- Exeption log-->
+        <RollingFile name="exceptions" fileName="${APP_LOG_ROOT}/exceptions.log" filePattern="${APP_LOG_ROOT}/exceptions-%d{yyyy-MM-dd}.log">
+            <PatternLayout>
+                <pattern>%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %level %logger{36} - %msg%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="trace" >
+            <AppenderRef ref="fileLoggerSearch" level="info" />
+            <AppenderRef ref="exceptions" level="warn" />
+            <AppenderRef ref="input_errors" level="error" />
+        </Root>
+    </Loggers>
+</Configuration>
